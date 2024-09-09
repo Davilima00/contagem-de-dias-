@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="countdown-container">
+        <h1>faltam</h1>
+        <div id="countdown">
+            <span id="days"></span> Dias Restantes
+            
+        </div>
+        <img src="Captura de Tela 2024-08-21 às 15.47.56.png" alt="foto">
+    </div>
+
+    <script>
+        function countdown() {
+            const targetDate = new Date("December 23, 2025").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+            document.getElementById('days').innerHTML = days;
+
+            if (difference < 0) {
+                document.getElementById('countdown').innerHTML = "Tempo Expirado!";
+            }
+        }
+
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
+
+
